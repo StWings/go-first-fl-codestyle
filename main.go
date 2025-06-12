@@ -52,26 +52,6 @@ func special(charName, charClass string) string {
 	return "неизвестный класс персонажа"
 }
 
-func choiseCharClass() string {
-	var approveChoice string
-	var charClass string
-
-	for approveChoice != "y" {
-		fmt.Print("Введи название персонажа, за которого хочешь играть: Воитель — warrior, Маг — mage, Лекарь — healer: ")
-		fmt.Scanf("%s\n", &charClass)
-		if charClass == "warrior" {
-			fmt.Println("Воитель — дерзкий воин ближнего боя. Сильный, выносливый и отважный.")
-		} else if charClass == "mage" {
-			fmt.Println("Маг — находчивый воин дальнего боя. Обладает высоким интеллектом.")
-		} else if charClass == "healer" {
-			fmt.Println("Лекарь — могущественный заклинатель. Черпает силы из природы, веры и духов.")
-		}
-		fmt.Print("Нажми (Y), чтобы подтвердить выбор, или любую другую кнопку, чтобы выбрать другого персонажа: ")
-		fmt.Scanf("%s\n", &approveChoice)
-		approveChoice = strings.ToLower(approveChoice)
-	}
-	return charClass
-}
 func startTraining(charName, charClass string) string {
 	if charClass == "warrior" {
 		fmt.Printf("%s, ты Воитель - отличный боец ближнего боя.\n", charName)
@@ -109,6 +89,27 @@ func startTraining(charName, charClass string) string {
 	}
 
 	return "тренировка окончена"
+}
+
+func choiseCharClass() string {
+	var approveChoice string
+	var charClass string
+
+	for approveChoice != "y" {
+		fmt.Print("Введи название персонажа, за которого хочешь играть: Воитель — warrior, Маг — mage, Лекарь — healer: ")
+		fmt.Scanf("%s\n", &charClass)
+		if charClass == "warrior" {
+			fmt.Println("Воитель — дерзкий воин ближнего боя. Сильный, выносливый и отважный.")
+		} else if charClass == "mage" {
+			fmt.Println("Маг — находчивый воин дальнего боя. Обладает высоким интеллектом.")
+		} else if charClass == "healer" {
+			fmt.Println("Лекарь — могущественный заклинатель. Черпает силы из природы, веры и духов.")
+		}
+		fmt.Print("Нажми (Y), чтобы подтвердить выбор, или любую другую кнопку, чтобы выбрать другого персонажа: ")
+		fmt.Scanf("%s\n", &approveChoice)
+		approveChoice = strings.ToLower(approveChoice)
+	}
+	return charClass
 }
 
 func main() {
